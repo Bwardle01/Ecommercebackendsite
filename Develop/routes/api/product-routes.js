@@ -5,7 +5,7 @@ const { Product, Category, Tag, ProductTag } = require('../../models');
 
 // get all products
 router.get('/', async (req, res) => {
-  // includes its associated Category and Tag data
+  
   try{
     const dbProductData = await Product.findAll({
       include: [
@@ -31,7 +31,7 @@ router.get('/', async (req, res) => {
 // get one product
 router.get('/:id', async (req, res) => {
   // find a single product by its `id`
-  // be sure to include its associated Category and Tag data
+  
   try{
     const dbProductData = await Product.findOne({
       where: {
